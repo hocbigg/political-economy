@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Advanced Topics</title>
+  <meta name="description" content="Advanced Topics curriculum by hocbigg.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/political-economy/advanced_topics.html">
+  <meta property="og:title" content="Advanced Topics">
+  <meta property="og:description" content="Advanced Topics curriculum by hocbigg.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/political-economy/advanced_topics.html">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/political-economy/">Political Economy</a></li>
+      <li><a href="/political-economy/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="https://github.com/hocbigg/political-economy" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+
+<h2 id="specialization-tracks-index">Specialization Tracks Index</h2>
+<p>The following specialization tracks allow self-directed learners to deepen their understanding of political economy; learners are encouraged to select one or two tracks aligned with their specific intellectual or professional interests rather than attempting to study all of them.</p>
+<ul>
+<li><strong>Political Economy of Development</strong> - How political institutions, governance structures, and historical processes shape economic development outcomes across countries.</li>
+<li><strong>Political Economy of Finance &amp; Financialization</strong> - How financial markets, systemic crises, and the expanding power of the financial sector restructure modern economies and state policy.</li>
+<li><strong>Environmental &amp; Ecological Political Economy</strong> - How economic systems interact with ecological boundaries, climate policy instruments, and resource transitions.</li>
+<li><strong>Political Economy of Inequality &amp; Redistribution</strong> - How income and wealth concentration emerge, and how democratic institutions and electoral systems mediate redistributive conflict.</li>
+<li><strong>Digital Political Economy &amp; Platform Capitalism</strong> - How digital platforms, data extraction, and network monopolization reshape contemporary capitalist organization and political power.</li>
+</ul>
+<h2 id="political-economy-of-development">Political Economy of Development</h2>
+<p>This track explores how political institutions, governance mechanisms, and historical processes determine divergent paths of economic growth and state capacity.</p>
+<p>Institutional Foundations of Growth: <a href="https://www.nber.org/papers/w10481" target="_blank" rel="noopener noreferrer">Institutions as the Fundamental Cause of Long-Run Growth (Daron Acemoglu, Simon Johnson, &amp; James Robinson / NBER)</a> - The seminal working paper demonstrating empirically and theoretically that comparative economic development is driven primarily by institutional rules rather than geography or culture.</p>
+<p>Political Economy of Underdevelopment: <a href="https://ocw.mit.edu/courses/14-75-political-economy-and-economic-development-fall-2012/" target="_blank" rel="noopener noreferrer">Political Economy and Economic Development (MIT OpenCourseWare / 14.75)</a> - A comprehensive university course providing lecture notes and problem sets on collective action failures, bureaucratic corruption, political transitions, and the persistent effects of historical shocks.</p>
+<p>Inclusive vs. Extractive Institutions: <a href="https://books.google.com/books?isbn=9780307719225" target="_blank" rel="noopener noreferrer">Why Nations Fail: The Origins of Power, Prosperity, and Poverty (Daron Acemoglu &amp; James A. Robinson / Crown)</a> - An accessible, case-study-rich synthesis examining how political institutions establish inclusive or extractive economic systems that either foster or block long-term innovation.</p>
+<p>Escaping the Middle-Income Trap: <a href="https://openknowledge.worldbank.org/handle/10986/41919" target="_blank" rel="noopener noreferrer">World Development Report 2024: The Middle-Income Trap (World Bank)</a> - A definitive policy report outlining the structural transitions from capital investment to technological infusion and domestic innovation required for emerging economies to sustain growth.</p>
+<h2 id="political-economy-of-finance-financialization">Political Economy of Finance &amp; Financialization</h2>
+<p>This track examines the destabilizing dynamics of credit cycles, systemic financial crises, and the political dominance of the financial sector over modern macroeconomic policy.</p>
+<p>Mechanics of Financial Crises: <a href="https://ocw.mit.edu/courses/14-09-financial-crises-january-iap-2016/" target="_blank" rel="noopener noreferrer">Financial Crises (MIT OpenCourseWare / 14.09)</a> - An analytical lecture series and reading syllabus breaking down the amplification mechanisms of bank runs, collateral fire sales, leverage cycles, and regulatory design.</p>
+<p>Endogenous Financial Fragility: <a href="https://www.levyinstitute.org/publications/the-financial-instability-hypothesis" target="_blank" rel="noopener noreferrer">The Financial Instability Hypothesis (Hyman P. Minsky / Levy Economics Institute)</a> - The foundational post-Keynesian paper arguing that extended periods of macroeconomic stability endogenously induce speculative and Ponzi debt structures that culminate in systemic crises.</p>
+<p>The Politics of Financialization: <a href="https://books.google.com/books?isbn=9780674050846" target="_blank" rel="noopener noreferrer">Capitalizing on Crisis: The Political Origins of the Rise of Finance (Greta R. Krippner / Harvard University Press)</a> - A historical-sociological study showing how financialization developed out of state attempts to resolve domestic distribution disputes and stagflation during the 1970s and 1980s.</p>
+<p>Advanced Macro-Financial Frictions: <a href="https://ocw.mit.edu/courses/14-454-economic-crises-spring-2026/" target="_blank" rel="noopener noreferrer">Economic Crises (MIT OpenCourseWare / 14.454)</a> - Advanced graduate courseware featuring problem sets and lecture notes that rigorously formalize credit constraints, liquidity spirals, sovereign debt distress, and sudden stops.</p>
+<h2 id="environmental-ecological-political-economy">Environmental &amp; Ecological Political Economy</h2>
+<p>This track analyzes how economic systems interface with biophysical limits, evaluating climate mitigation tools, integrated assessment models, and energy transition politics.</p>
+<p>Biophysical and Ecological Economics: <a href="https://books.google.com/books?isbn=9781597266819" target="_blank" rel="noopener noreferrer">Ecological Economics: Principles and Applications (Herman E. Daly &amp; Joshua Farley / Island Press)</a> - The definitive textbook grounding economic production within physical thermodynamic laws, shifting the analytical focus from endless throughput expansion to optimal scale and equitable distribution.</p>
+<p>Climate Economics and Integrated Assessment: <a href="https://www.coursera.org/learn/economics-and-policies-of-climate-change" target="_blank" rel="noopener noreferrer">Economics and Policies of Climate Change (EDHEC Business School / Coursera)</a> - A structured online course available in free audit mode covering the social discount rate, Nordhaus's DICE integrated assessment model, carbon pricing frameworks, and carbon trading mechanics.</p>
+<p>Decarbonization and Energy Transitions: <a href="https://ocw.mit.edu/courses/15-031j-energy-decisions-markets-and-policies-spring-2012/" target="_blank" rel="noopener noreferrer">Energy Decisions, Markets, and Policies (MIT OpenCourseWare / 15.031J)</a> - Complete open courseware including full video lectures that examine energy markets, regulatory path dependencies, and the political barriers to large-scale decarbonization.</p>
+<p>The Social Cost of Carbon: <a href="https://www.nobelprize.org/uploads/2018/10/nordhaus-lecture.pdf" target="_blank" rel="noopener noreferrer">Climate Change: The Ultimate Challenge for Economics (William D. Nordhaus / Nobel Prize Foundation)</a> - The seminal Nobel Prize lecture presenting the orthodox integrated assessment paradigm for quantifying climate damage externalities and establishing global emissions pricing.</p>
+<h2 id="political-economy-of-inequality-redistribution">Political Economy of Inequality &amp; Redistribution</h2>
+<p>This track investigates the drivers of wealth and income inequality alongside the electoral and institutional mechanisms that govern redistributive social policy.</p>
+<p>Long-Run Capital and Wealth Dynamics: <a href="https://books.google.com/books?isbn=9780674430006" target="_blank" rel="noopener noreferrer">Capital in the Twenty-First Century (Thomas Piketty / Harvard University Press)</a> - The benchmark empirical study compiling historical multi-century tax datasets to prove that when the rate of return on capital exceeds output growth, inherited wealth naturally concentrates.</p>
+<p>Wealth Taxation and Fiscal Enforcement: <a href="https://gabriel-zucman.eu/files/SZ2022AEA.pdf" target="_blank" rel="noopener noreferrer">Wealth Taxation: Lessons from History and Recent Developments (Emmanuel Saez &amp; Gabriel Zucman / AEA Papers and Proceedings)</a> - An open-access policy analysis examining historical European wealth tax designs, offshore avoidance avenues, and modern reporting mechanisms for effective wealth redistribution.</p>
+<p>Electoral Rules and Coalition Formation: Electoral Institutions and the Politics of Coalitions: Why Some Democracies Redistribute More Than Others (Torben Iversen &amp; David Soskice / American Political Science Review) - The foundational paper proving that proportional representation fosters center-left redistributive coalitions while majoritarian single-member districts systematically favor center-right governments; search title on Google Scholar for open-access working papers.</p>
+<p>Resilience of Democratic Capitalism: <a href="https://books.google.com/books?isbn=9780691182736" target="_blank" rel="noopener noreferrer">Democracy and Prosperity: Reinventing Capitalism through a Turbulent Century (Torben Iversen &amp; David Soskice / Princeton University Press)</a> - A major treatise demonstrating how advanced democratic states and capitalist markets co-evolved, arguing that modern democratic governments actively re-engineer knowledge economies to preserve broad-based middle-class stability.</p>
+<h2 id="digital-political-economy-platform-capitalism">Digital Political Economy &amp; Platform Capitalism</h2>
+<p>This track probes the political and structural dimensions of the digital economy, focusing on platform monopolization, behavioral surveillance, and data extractivism.</p>
+<p>Architectural Dynamics of Platform Capitalism: <a href="https://books.google.com/books?isbn=9781509504862" target="_blank" rel="noopener noreferrer">Platform Capitalism (Nick Srnicek / Polity Press)</a> - A foundational theoretical framework detailing how data collection serves as the central raw material of modern capitalism, examining multi-sided platform architectures and monopolistic lock-in effects.</p>
+<p>Structural Dimensions of the Digital Economy: <a href="https://www.tni.org/en/publication/digital-capitalism" target="_blank" rel="noopener noreferrer">Digital Capitalism (Transnational Institute)</a> - A free 6-week open-access course providing video masterclasses and reading packets on Big Tech monopolies, digital trade regimes, data sovereignty, and technological alternatives.</p>
+<p>Surveillance Capitalism: <a href="https://books.google.com/books?isbn=9781610395694" target="_blank" rel="noopener noreferrer">The Age of Surveillance Capitalism: The Fight for a Human Future at the New Frontier of Power (Shoshana Zuboff / PublicAffairs)</a> - The canonical treatise exposing how digital corporations convert private human experience into proprietary behavioral data used for behavioral modification and market control.</p>
+<p>Data Colonialism: <a href="https://books.google.com/books?isbn=9781503609747" target="_blank" rel="noopener noreferrer">The Costs of Connection: How Data Is Colonizing Human Life and Appropriating It for Capitalism (Nick Couldry &amp; Ulises A. Mejias / Stanford University Press)</a> - An advanced critical analysis demonstrating how global data extraction models reproduce historical colonial practices by turning everyday human life into commodifiable inputs.</p>
+    </article>
+  </main>
+
+</body>
+</html>
